@@ -45,9 +45,9 @@ buck-out/
 \.buckd/
 *.keystore
 
-index.js
-index.d.ts
-index.js.flow
+# index.js
+# index.d.ts
+# index.js.flow
 
 # iOS
 ios/Pods

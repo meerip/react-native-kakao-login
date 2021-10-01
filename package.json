@@ -14,7 +14,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/react-native-seoul/react-native-kakao-login"
+    "url": "git+https://github.com/meerip/react-native-kakao-login"
   },
   "publishConfig": {
     "access": "public"
@@ -34,7 +34,9 @@
     "react-native": "*"
   },
   "dependencies": {
-    "dooboolab-welcome": "^1.3.0"
+    "dooboolab-welcome": "^1.3.0",
+    "react-native": "^0.64.2",
+    "react-native-cli": "^2.0.1"
   },
   "devDependencies": {
     "@dooboo/eslint-config": "^0.7.0",
