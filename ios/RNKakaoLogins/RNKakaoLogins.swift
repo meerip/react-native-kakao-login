@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import os
 
 import KakaoSDKCommon
 import KakaoSDKAuth
@@ -44,20 +45,20 @@ class RNKakaoLogins: NSObject {
     @objc(login:rejecter:)
     func login(_ resolve: @escaping RCTPromiseResolveBlock,
                 rejecter reject: @escaping RCTPromiseRejectBlock) -> Void {
-        print("UserApi.shared.loginWithKakaoTalk10:::")
+        os_log("UserApi.shared.loginWithKakaoTalk10:::")
         DispatchQueue.main.async {
             let dateFormatter = DateFormatter()
             dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss";
-            print("UserApi.shared.loginWithKakaoTalk20:::")
+            os_log("UserApi.shared.loginWithKakaoTalk20:::")
             if (UserApi.isKakaoTalkLoginAvailable()) {
                 UserApi.shared.loginWithKakaoTalk {(oauthToken, error) in
-                    print("UserApi.shared.loginWithKakaoTalk30::: ")
+                    os_log("UserApi.shared.loginWithKakaoTalk30::: ")
                     if let error = error {
-                        print("UserApi.shared.loginWithKakaoTalk40:::", error.localizedDescription)
+                        os_log("UserApi.shared.loginWithKakaoTalk40:::", error.localizedDescription)
                         reject("RNKakaoLogins", error.localizedDescription, nil)
                     }
                     else {
-                        print("UserApi.shared.loginWithKakaoTalk50:::")
+                        os_log("UserApi.shared.loginWithKakaoTalk50:::")
                         resolve([
                             "accessToken": oauthToken?.accessToken ?? "",
                             "refreshToken": oauthToken?.refreshToken ?? "" as Any,
